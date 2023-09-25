@@ -37,10 +37,10 @@ const start = () => {
 
     const { days, hours, minutes, seconds } = convertMs(leftTime);
 
-    daysField.textContent = pad(days);
-    hoursField.textContent = pad(hours);
-    minutesField.textContent = pad(minutes);
-    secondsField.textContent = pad(seconds);
+    daysField.textContent = addLeadingZero(days);
+    hoursField.textContent = addLeadingZero(hours);
+    minutesField.textContent = addLeadingZero(minutes);
+    secondsField.textContent = addLeadingZero(seconds);
 
   }, 1000)
 }
@@ -69,6 +69,6 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 };
 
-function pad(value) {
+function addLeadingZero(value) {
   return String(value).padStart(2, "0");
 };
